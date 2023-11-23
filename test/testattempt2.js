@@ -1,7 +1,6 @@
 import { describe, it, afterEach } from "node:test";
-import homePage from "../PageObjects/pages/home.page.js";
 import { should, expect, assert } from "chai";
-import { pages } from "../PageObjects/index.js";
+import { pages } from "../src/PageObjects/index.js";
 var url = 'https://www.ubuy.com.pl/en/category/electronics-172282';
 
 
@@ -15,7 +14,6 @@ describe('test suite attempt', function(){
         await pages('home').openUrl(url);
         await pages('home').performSearch("ASUS ROG Strix G16 G614JV-ES94");
         await pages('search').waitForVisibleElement(".product-inner-list");
-        await pages('search').clickOn("button[aria-label='Search']");
         await pages('search').waitForVisibleElement("a[title='ASUS ROG Strix G16 G614JV-ES94']");
         assert.exists(pages('search').getElementByLocator("a[title='ASUS ROG Strix G16 G614JV-ES94']"));
     });
