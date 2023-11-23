@@ -13,7 +13,7 @@ function pages(name) {
     return items[name];
 }
 
-export {
+export default {
     cartPage,
     homePage,
     productPage,
